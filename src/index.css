@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface-variant: #35343a;
+  --color-on-secondary-fixed: #25005a;
+  --color-on-tertiary-fixed-variant: #41474e;
+  --color-on-primary-fixed: #00201d;
+  --color-tertiary-fixed: #dde3eb;
+  --color-tertiary-container: #b8bec6;
+  --color-error: #ffb4ab;
+  --color-inverse-primary: #006a63;
+  --color-secondary-fixed-dim: #d2bbff;
+  --color-on-background: #e4e1e9;
+  --color-on-tertiary-fixed: #161c22;
+  --color-tertiary-fixed-dim: #c1c7cf;
+  --color-secondary-container: #57319e;
+  --color-inverse-surface: #e4e1e9;
+  --color-surface-tint: #5adace;
+  --color-primary-fixed-dim: #5adace;
+  --color-tertiary: #d4dae2;
+  --color-on-surface-variant: #bbc9c7;
+  --color-outline-variant: #3c4947;
+  --color-surface-container-lowest: #0e0e13;
+  --color-error-container: #93000a;
+  --color-background: #131318;
+  --color-on-error-container: #ffdad6;
+  --color-primary-container: #4fd1c5;
+  --color-inverse-on-surface: #303035;
+  --color-on-tertiary: #2b3137;
+  --color-surface-container: #1f1f24;
+  --color-surface-dim: #131318;
+  --color-on-surface: #e4e1e9;
+  --color-surface-container-high: #2a292f;
+  --color-on-primary: #003733;
+  --color-secondary: #d2bbff;
+  --color-secondary-fixed: #eaddff;
+  --color-on-tertiary-container: #474d54;
+  --color-on-error: #690005;
+  --color-primary-fixed: #79f7ea;
+  --color-on-primary-fixed-variant: #00504a;
+  --color-on-secondary-container: #c6aaff;
+  --color-on-primary-container: #005750;
+  --color-primary: #6feee1;
+  --color-surface: #131318;
+  --color-surface-container-low: #1b1b20;
+  --color-on-secondary: #3d0e84;
+  --color-surface-bright: #39383e;
+  --color-outline: #869491;
+  --color-surface-container-highest: #35343a;
+  --color-on-secondary-fixed-variant: #552e9b;
+
+  --font-serif: "Noto Serif", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .bioluminescent {
+    background: linear-gradient(135deg, #6FEEE1 0%, #4FD1C5 100%);
+  }
+  .text-glow {
+    text-shadow: 0 0 12px rgba(111, 238, 225, 0.4);
+  }
+  .glass-panel {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  .tag-glow-hover:hover {
+    box-shadow: 0 0 20px rgba(111, 238, 225, 0.3);
+    border-color: rgba(111, 238, 225, 0.6);
+  }
+  .celestial-bg {
+    background: radial-gradient(circle at 50% 50%, #1b1b20 0%, #131318 100%);
+  }
+  .glass-card {
+    background: rgba(53, 52, 58, 0.4);
+    backdrop-filter: blur(20px);
+  }
+  .bioluminescent-gradient {
+    background: linear-gradient(135deg, #6FEEE1 0%, #4FD1C5 100%);
+  }
+  .ghost-border {
+    border: 1px solid rgba(60, 73, 71, 0.15);
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(111, 238, 225, 0.1);
+    border-radius: 10px;
+  }
+  .knowledge-graph-canvas {
+    background: radial-gradient(circle at 50% 50%, #1b1b20 0%, #131318 100%);
+  }
+  .node-hover-glow:hover { 
+    box-shadow: 0 0 30px rgba(111, 238, 225, 0.4); 
+    border-color: rgba(111, 238, 225, 0.6) !important; 
+  }
+  .canvas-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgba(111, 238, 225, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+  .node-glow {
+    box-shadow: 0 0 20px rgba(111, 238, 225, 0.15);
+  }
+  .ai-glow {
+    box-shadow: 0 0 30px rgba(210, 187, 255, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-4px) translateX(2px); }
+  50% { transform: translateY(-2px) translateX(-2px); }
+  75% { transform: translateY(-6px) translateX(1px); }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.spark-tag {
+  transition: all 0.3s ease;
+}
+
+.spark-tag:hover { 
+  box-shadow: 0 0 20px rgba(111, 238, 225, 0.4); 
+  backdrop-filter: blur(16px) !important; 
+  z-index: 10;
+}
